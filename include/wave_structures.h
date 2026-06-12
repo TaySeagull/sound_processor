@@ -17,7 +17,7 @@ struct __attribute__((packed)) RiffHeader
  * @brief Structure for the FMT header of the wav file
  */
 struct __attribute__((packed)) FmtHeader {
-    char chunkId[3]; // "fmt"
+    char chunkId[4]; // "fmt"
     uint32_t chunkSize;
     uint16_t wFormatTag;
     uint16_t wChannels;

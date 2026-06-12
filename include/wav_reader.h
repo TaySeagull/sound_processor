@@ -11,7 +11,7 @@ class WavReader {
 public:
     WavReader() = default;
     
-    Waveform readWavFile(const std::string& filename);
+    Waveform read(const std::string& filename);
 
 private:
     void checkRiffHeader(const RiffHeader& riff);

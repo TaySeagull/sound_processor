@@ -12,7 +12,11 @@ include(Catch)
 # EXECUTABLE
 add_executable(sound_processor_tests
     test_waveform.cpp
+    test_wav_reader.cpp
+    test_wav_writer.cpp
     ${CMAKE_SOURCE_DIR}/src/waveform.cpp
+    ${CMAKE_SOURCE_DIR}/src/wav_reader.cpp
+    ${CMAKE_SOURCE_DIR}/src/wav_writer.cpp
 )
 
 # LINK BETWEEN CATCH 2 AND CODE

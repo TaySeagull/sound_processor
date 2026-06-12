@@ -13,14 +13,22 @@ The project is a CLI application that processes a WAV audio file supplied as inp
 ### Project structure
 ```c++
 ├── include/
+│   ├── wav_reader.h
+│   ├── wav_writer.h
+│   ├── wave_structures.h
 │   ├── waveform.h
 ├── src/
 │   ├── main.cpp
+│   ├── wav_reader.cpp
+│   ├── wav_writer.cpp
 │   ├── waveform.cpp
 ├── tests/
 │   ├── CMakeLists.txt
+│   ├── test_wav_reader.cpp
+│   ├── test_wav_writer.cpp
 │   ├── test_waveform.cpp
-└── CMakeLists.txt
+├── CMakeLists.txt
+└── README.md
 ```
 
 ### Build and lauch

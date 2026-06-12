@@ -10,7 +10,7 @@
  * RIFF, FMT and DATA based on the task's requirements
  * @param std::string& filename
  */
-Waveform WavReader::readWavFile(const std::string& filename) {
+Waveform WavReader::read(const std::string& filename) {
     std::ifstream file(filename, std::ios::binary);
     
     if (!file.is_open()) {
