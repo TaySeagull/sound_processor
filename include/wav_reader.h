@@ -4,19 +4,16 @@
 #include "wave_structures.h"
 
 /**
- * @class WaveReader
- * @brief A class meant to read the wav file
+ * @class WavReader
+ * @brief A class to read the wav file
  */
-class WaveReader {
+class WavReader {
 public:
-    // Constructor
-    WaveReader() = default;
+    WavReader() = default;
     
-    // Functions
     Waveform readWavFile(const std::string& filename);
 
 private:
-    // Checkers for riff and fmt
     void checkRiffHeader(const RiffHeader& riff);
     void checkFmtHeader(const FmtHeader& fmt);
     void checkDataHeader(const DataHeader& data);

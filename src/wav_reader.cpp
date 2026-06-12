@@ -1,7 +1,7 @@
 #include <cstring>
 #include <stdexcept>
 #include <fstream>
-#include "wave_reader.h"
+#include "wav_reader.h"
 #include "waveform.h"
 
 /**
@@ -10,7 +10,7 @@
  * RIFF, FMT and DATA based on the task's requirements
  * @param std::string& filename
  */
-Waveform WaveReader::readWavFile(const std::string& filename) {
+Waveform WavReader::readWavFile(const std::string& filename) {
     std::ifstream file(filename, std::ios::binary);
     
     if (!file.is_open()) {
@@ -73,7 +73,7 @@ Waveform WaveReader::readWavFile(const std::string& filename) {
  * @details Checks RIFF header and WAVE format and throws error in stderr
  * @param riff const RiffHeader&
  */
-void WaveReader::checkRiffHeader(const RiffHeader& riff)
+void WavReader::checkRiffHeader(const RiffHeader& riff)
 {
     if (std::strncmp(riff.chunkId, "RIFF", 4) != 0)
     {throw std::runtime_error("Failed RIFF chunck");}
@@ -94,7 +94,7 @@ void WaveReader::checkRiffHeader(const RiffHeader& riff)
  *      - bits per sample: 16
  * @param riff const FmtHeader&
  */
-void WaveReader::checkFmtHeader(const FmtHeader& fmt)
+void WavReader::checkFmtHeader(const FmtHeader& fmt)
 {
     if (std::strncmp(fmt.chunkId, "fmt", 3) != 0)
     { throw std::runtime_error("Failed FMT chunck");}
@@ -121,7 +121,7 @@ void WaveReader::checkFmtHeader(const FmtHeader& fmt)
  * @details Checks DATA header
  * @param riff const DataHeader&
  */
-void WaveReader::checkDataHeader(const DataHeader& data)
+void WavReader::checkDataHeader(const DataHeader& data)
 {
     if (std::strncmp(data.chunkId, "data", 4) != 0) {
         throw std::runtime_error("Invalid data header");
