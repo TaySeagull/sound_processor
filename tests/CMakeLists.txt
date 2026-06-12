@@ -15,10 +15,12 @@ add_executable(sound_processor_tests
     test_wav_reader.cpp
     test_wav_writer.cpp
     test_args_parser.cpp
+    test_pipeline.cpp
     ${CMAKE_SOURCE_DIR}/src/waveform.cpp
     ${CMAKE_SOURCE_DIR}/src/wav_reader.cpp
     ${CMAKE_SOURCE_DIR}/src/wav_writer.cpp
     ${CMAKE_SOURCE_DIR}/src/argument_parser.cpp
+    ${CMAKE_SOURCE_DIR}/src/pipeline.cpp
 )
 
 # LINK BETWEEN CATCH 2 AND CODE
