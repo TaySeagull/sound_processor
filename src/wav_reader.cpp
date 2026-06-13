@@ -14,7 +14,7 @@ Waveform WavReader::read(const std::string& filename) {
     std::ifstream file(filename, std::ios::binary);
     
     if (!file.is_open()) {
-        throw std::runtime_error("Cannot open file for reading:" + filename);
+        throw std::runtime_error("Cannot open file for reading: " + filename);
     }
 
     RiffHeader riffHeader;

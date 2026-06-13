@@ -22,6 +22,7 @@ add_executable(sound_processor_tests
     test_silence_filter.cpp
     test_am_filter.cpp
     test_fm_filter.cpp
+    test_converter.cpp
     ${CMAKE_SOURCE_DIR}/src/waveform.cpp
     ${CMAKE_SOURCE_DIR}/src/wav_reader.cpp
     ${CMAKE_SOURCE_DIR}/src/wav_writer.cpp
@@ -33,6 +34,9 @@ add_executable(sound_processor_tests
     ${CMAKE_SOURCE_DIR}/src/silence_filter.cpp
     ${CMAKE_SOURCE_DIR}/src/am_filter.cpp
     ${CMAKE_SOURCE_DIR}/src/fm_filter.cpp
+    ${CMAKE_SOURCE_DIR}/src/cmd_line_args_2_pipeline_converter.cpp
+    ${CMAKE_SOURCE_DIR}/src/filter_producers.cpp
+    ${CMAKE_SOURCE_DIR}/src/application.cpp 
 )
 
 # LINK BETWEEN CATCH 2 AND CODE

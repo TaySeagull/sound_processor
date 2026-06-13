@@ -1,13 +1,23 @@
+#include "application.h"
 #include <iostream>
-#include "waveform.h"
+#include <exception>
 
-int main() {
-    std::cout << "Sound Processor";
+int main(int argc, char* argv[]) {
+    Application app;
+    int result = 0;
     
-    Waveform waveform;
-    std::cout << "Sample rate: " << waveform.getSampleRate() << "\n";
-    std::cout << "Channels: " << waveform.getChannels() << "\n";
-    std::cout << "Bits per sample: " << waveform.getBitsPerSample() << "\n";
+    try {
+        app.configure();
+        result = app.start(argc, argv);
+
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << "\n";
+        return 1;
+
+    } catch (...) {
+        std::cerr << "Unknown error occurred\n";
+        return 1;
+    }
     
-    return 0;
+    return result;
 }
