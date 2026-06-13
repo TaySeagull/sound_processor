@@ -16,11 +16,15 @@ add_executable(sound_processor_tests
     test_wav_writer.cpp
     test_args_parser.cpp
     test_pipeline.cpp
+    test_ampl_filter.cpp
+    test_timestretch_filter.cpp
     ${CMAKE_SOURCE_DIR}/src/waveform.cpp
     ${CMAKE_SOURCE_DIR}/src/wav_reader.cpp
     ${CMAKE_SOURCE_DIR}/src/wav_writer.cpp
     ${CMAKE_SOURCE_DIR}/src/argument_parser.cpp
     ${CMAKE_SOURCE_DIR}/src/pipeline.cpp
+    ${CMAKE_SOURCE_DIR}/src/ampl_filter.cpp
+    ${CMAKE_SOURCE_DIR}/src/timestretch_filter.cpp
 )
 
 # LINK BETWEEN CATCH 2 AND CODE

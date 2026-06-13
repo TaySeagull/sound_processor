@@ -13,21 +13,32 @@ The project is a CLI application that processes a WAV audio file supplied as inp
 ### Project structure
 ```c++
 ├── include/
+│   ├── ampl_filter.h
 │   ├── argument_parser.h
 │   ├── filter_descriptor.h
+│   ├── ifilter.h
+│   ├── pipeline.h
+│   ├── timestretch_filter.h
 │   ├── wav_reader.h
 │   ├── wav_writer.h
 │   ├── wave_structures.h
 │   ├── waveform.h
 ├── src/
+│   ├── ampl_filter.cpp
 │   ├── argument_parser.cpp
 │   ├── main.cpp
+│   ├── pipeline.cpp
+│   ├── timestretch_filter.cpp
 │   ├── wav_reader.cpp
 │   ├── wav_writer.cpp
 │   ├── waveform.cpp
 ├── tests/
 │   ├── CMakeLists.txt
+│   ├── mock_filter.h
+│   ├── test_ampl_filter.cpp
 │   ├── test_args_parser.cpp
+│   ├── test_pipeline.cpp
+│   ├── test_timestretch_filter.cpp
 │   ├── test_wav_reader.cpp
 │   ├── test_wav_writer.cpp
 │   ├── test_waveform.cpp
