@@ -1,4 +1,4 @@
-#include "ampl_filter.h"
+#include "filters/ampl_filter.h"
 
 /**
  * @brief Constructor for ampl_filter

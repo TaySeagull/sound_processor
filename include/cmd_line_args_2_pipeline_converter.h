@@ -2,7 +2,7 @@
 #include <map>
 #include <string>
 #include "pipeline.h"
-#include "filter_descriptor.h"
+#include "filters/filter_descriptor.h"
 
 /**
  * @brief Function pointer type for filter producers from the task

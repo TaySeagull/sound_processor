@@ -1,10 +1,11 @@
 #include <catch2/catch_test_macros.hpp>
 #include "cmd_line_args_2_pipeline_converter.h"
+#include "filters/filter_producers.h"
+#include "filters/ampl_filter.h"
+#include "filters/generator_filter.h"
 #include "argument_parser.h"
-#include "filter_producers.h"
-#include "ampl_filter.h"
-#include "sin_gen_filter.h"
-#include "timestretch_filter.h"
+#include "filters/timestretch_filter.h"
+
 
 struct ArgsHelper {
     std::vector<char*> argv;
@@ -23,7 +24,6 @@ TEST_CASE("Converter creates pipeline with ampl filter", "[converter]") {
     converter.addFilterProducer("ampl", FilterProducers::amplFilterCreator);
     
     ArgsHelper args{"sound_processor", "-f", "ampl", "0.5"};
-
     ArgsParser parser;
     parser.parse(args.argc, args.argv.data());
     
@@ -38,15 +38,14 @@ TEST_CASE("Converter creates pipeline with ampl filter", "[converter]") {
     }
     
     pipeline.apply(&waveform);
-    REQUIRE(waveform.getSample(0) == 500); // 1000 * 0.5
+    REQUIRE(waveform.getSample(0) == 500);
 }
 
-TEST_CASE("Converter creates pipeline with sin generator", "[converter]") {
+TEST_CASE("Converter creates pipeline with generator sin", "[converter]") {
     CmdLineArgs2PipelineConverter converter;
-    converter.addFilterProducer("sin", FilterProducers::sinGenFilterCreator);
+    converter.addFilterProducer("generator", FilterProducers::generatorFilterCreator);
     
-    ArgsHelper args{"sound_processor", "-f", "sin", "0.8", "440", "1000"};
-
+    ArgsHelper args{"sound_processor", "-f", "generator", "sin", "440", "1000"};
     ArgsParser parser;
     parser.parse(args.argc, args.argv.data());
     
@@ -82,13 +81,26 @@ TEST_CASE("Converter throws error for unknown filter", "[converter]") {
     CmdLineArgs2PipelineConverter converter;
     
     ArgsHelper args{"sound_processor", "-f", "unknown_filter"};
-
     ArgsParser parser;
     parser.parse(args.argc, args.argv.data());
     
     REQUIRE_THROWS_AS(
         converter.createPipeline(parser.getFilterDescriptors()),
         std::runtime_error
+    );
+}
+
+TEST_CASE("Converter throws error for invalid parameters", "[converter]") {
+    CmdLineArgs2PipelineConverter converter;
+    converter.addFilterProducer("ampl", FilterProducers::amplFilterCreator);
+    
+    ArgsHelper args{"sound_processor", "-f", "ampl"};
+    ArgsParser parser;
+    parser.parse(args.argc, args.argv.data());
+    
+    REQUIRE_THROWS_AS(
+        converter.createPipeline(parser.getFilterDescriptors()),
+        std::logic_error
     );
 }
 

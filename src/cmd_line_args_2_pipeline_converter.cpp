@@ -1,6 +1,6 @@
-#include "cmd_line_args_2_pipeline_converter.h"
 #include <stdexcept>
 #include <string>
+#include "cmd_line_args_2_pipeline_converter.h"
 
 /**
  * @brief Creates a pipeline from filter descriptors

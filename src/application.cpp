@@ -1,8 +1,8 @@
+#include <iostream>
 #include "application.h"
-#include "filter_producers.h"
+#include "filters/filter_producers.h"
 #include "wav_reader.h"
 #include "wav_writer.h"
-#include <iostream>
 
 /**
  * @brief Configures all the filters
@@ -11,9 +11,9 @@ void Application::configure() {
     converter_.addFilterProducer("ampl", FilterProducers::amplFilterCreator);
     converter_.addFilterProducer("timestretch", FilterProducers::timestretchFilterCreator);
     converter_.addFilterProducer("silence", FilterProducers::silenceFilterCreator);
-    converter_.addFilterProducer("sin", FilterProducers::sinGenFilterCreator);
-    converter_.addFilterProducer("am", FilterProducers::amFilterCreator);
-    converter_.addFilterProducer("fm", FilterProducers::fmFilterCreator);
+    converter_.addFilterProducer("generator", FilterProducers::generatorFilterCreator);
+    converter_.addFilterProducer("normalize", FilterProducers::normalizeFilterCreator);
+    converter_.addFilterProducer("lowpass", FilterProducers::lowpassFilterCreator);
 }
 
 /**

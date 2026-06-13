@@ -13,15 +13,15 @@ add_executable(sound_processor
     src/wav_writer.cpp
     src/argument_parser.cpp
     src/pipeline.cpp
-    src/ampl_filter.cpp
-    src/timestretch_filter.cpp
-    src/silence_filter.cpp
-    src/sin_gen_filter.cpp
-    src/am_filter.cpp
-    src/fm_filter.cpp
     src/cmd_line_args_2_pipeline_converter.cpp
-    src/filter_producers.cpp
     src/application.cpp
+    src/filters/ampl_filter.cpp
+    src/filters/timestretch_filter.cpp
+    src/filters/silence_filter.cpp
+    src/filters/generator_filter.cpp
+    src/filters/normalize_filter.cpp
+    src/filters/lowpass_filter.cpp
+    src/filters/filter_producers.cpp
 )
 
 # TARGET

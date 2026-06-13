@@ -1,7 +1,10 @@
-#include "application.h"
 #include <iostream>
 #include <exception>
+#include "application.h"
 
+/**
+ * @brief that's main)
+ */
 int main(int argc, char* argv[]) {
     Application app;
     int result = 0;

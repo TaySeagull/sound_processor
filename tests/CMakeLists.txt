@@ -18,25 +18,27 @@ add_executable(sound_processor_tests
     test_pipeline.cpp
     test_ampl_filter.cpp
     test_timestretch_filter.cpp
-    test_sin_gen_filter.cpp
     test_silence_filter.cpp
-    test_am_filter.cpp
-    test_fm_filter.cpp
+    test_generator_filter.cpp
+    test_normalize_filter.cpp
+    test_lowpass_filter.cpp
     test_converter.cpp
+
     ${CMAKE_SOURCE_DIR}/src/waveform.cpp
     ${CMAKE_SOURCE_DIR}/src/wav_reader.cpp
     ${CMAKE_SOURCE_DIR}/src/wav_writer.cpp
     ${CMAKE_SOURCE_DIR}/src/argument_parser.cpp
     ${CMAKE_SOURCE_DIR}/src/pipeline.cpp
-    ${CMAKE_SOURCE_DIR}/src/ampl_filter.cpp
-    ${CMAKE_SOURCE_DIR}/src/timestretch_filter.cpp
-    ${CMAKE_SOURCE_DIR}/src/sin_gen_filter.cpp
-    ${CMAKE_SOURCE_DIR}/src/silence_filter.cpp
-    ${CMAKE_SOURCE_DIR}/src/am_filter.cpp
-    ${CMAKE_SOURCE_DIR}/src/fm_filter.cpp
     ${CMAKE_SOURCE_DIR}/src/cmd_line_args_2_pipeline_converter.cpp
-    ${CMAKE_SOURCE_DIR}/src/filter_producers.cpp
-    ${CMAKE_SOURCE_DIR}/src/application.cpp 
+    ${CMAKE_SOURCE_DIR}/src/application.cpp
+
+    ${CMAKE_SOURCE_DIR}/src/filters/ampl_filter.cpp
+    ${CMAKE_SOURCE_DIR}/src/filters/timestretch_filter.cpp
+    ${CMAKE_SOURCE_DIR}/src/filters/silence_filter.cpp
+    ${CMAKE_SOURCE_DIR}/src/filters/generator_filter.cpp
+    ${CMAKE_SOURCE_DIR}/src/filters/normalize_filter.cpp
+    ${CMAKE_SOURCE_DIR}/src/filters/lowpass_filter.cpp
+    ${CMAKE_SOURCE_DIR}/src/filters/filter_producers.cpp
 )
 
 # LINK BETWEEN CATCH 2 AND CODE

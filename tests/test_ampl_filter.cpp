@@ -1,5 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
-#include "ampl_filter.h"
+#include "filters/ampl_filter.h"
 #include "waveform.h"
 
 TEST_CASE("AmplFilter multiplies samples correctly", "[ampl_filter]") {

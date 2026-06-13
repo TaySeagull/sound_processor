@@ -8,7 +8,6 @@
  * @brief Reads a wav file
  * @details Tries to read wav file and chechs its sections
  * RIFF, FMT and DATA based on the task's requirements
- * @param std::string& filename
  */
 Waveform WavReader::read(const std::string& filename) {
     std::ifstream file(filename, std::ios::binary);
@@ -71,7 +70,6 @@ Waveform WavReader::read(const std::string& filename) {
 /**
  * @brief Checks RIFF header
  * @details Checks RIFF header and WAVE format and throws error in stderr
- * @param riff const RiffHeader&
  */
 void WavReader::checkRiffHeader(const RiffHeader& riff)
 {
@@ -92,7 +90,6 @@ void WavReader::checkRiffHeader(const RiffHeader& riff)
  *      - number of channels: 1
  *      - sample rate: 44100 Hz
  *      - bits per sample: 16
- * @param riff const FmtHeader&
  */
 void WavReader::checkFmtHeader(const FmtHeader& fmt)
 {
@@ -118,8 +115,6 @@ void WavReader::checkFmtHeader(const FmtHeader& fmt)
 
 /**
  * @brief Checks DATA header
- * @details Checks DATA header
- * @param riff const DataHeader&
  */
 void WavReader::checkDataHeader(const DataHeader& data)
 {

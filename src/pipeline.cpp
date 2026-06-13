@@ -1,5 +1,5 @@
-#include "pipeline.h"
 #include <utility>
+#include "pipeline.h"
 
 /**
  * @brief Destructor for pipeline

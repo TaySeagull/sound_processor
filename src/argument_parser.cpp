@@ -1,13 +1,9 @@
-#include "argument_parser.h"
 #include <iostream>
 #include <cstring>
+#include "argument_parser.h"
 
 /**
  * @brief Parses command line arguments
- * 
- * @param argc Number of arguments
- * @param argv Array of argument strings
- * @return Result code indicating success or type of error
  */
 ArgsParser::Result ArgsParser::parse(int argc, char* argv[]) {
     inputFileName_ = nullptr;
@@ -97,8 +93,6 @@ void ArgsParser::printHelp() const {
 
 /**
  * @brief Checks whether a string is a command line flag (starts with '-').
- * @param arg String to check
- * @return true if the string starts with '-', false otherwise
  */
 bool ArgsParser::isFlag(const char* arg) const {
     return arg[0] == '-';

@@ -1,11 +1,9 @@
-#include "wav_writer.h"
 #include <stdexcept>
 #include <cstring>
+#include "wav_writer.h"
 
 /**
  * @brief Writes a Waveform object to a wav file
- * @param filename filename
- * @param waveform The Waveform object containing audio data to write
  */
 void WavWriter::write(const std::string& filename, const Waveform& waveform) {
     std::ofstream file(filename, std::ios::binary);
@@ -33,8 +31,6 @@ void WavWriter::write(const std::string& filename, const Waveform& waveform) {
 
 /**
  * @brief Creates the RIFF header
- * @param dataSize Size of the audio data in bytes
- * @return RiffHeader structure
  */
 RiffHeader WavWriter::createRiffHeader(uint32_t dataSize) {
     RiffHeader riff;
@@ -46,8 +42,6 @@ RiffHeader WavWriter::createRiffHeader(uint32_t dataSize) {
 
 /**
  * @brief Creates the FMT header
- * @param waveform The Waveform object containing audio data to write
- * @return FmtHeader structure
  */
 FmtHeader WavWriter::createFmtHeader(const Waveform& waveform) {
     FmtHeader fmt;
@@ -64,8 +58,6 @@ FmtHeader WavWriter::createFmtHeader(const Waveform& waveform) {
 
 /**
  * @brief Creates the DATA header
- * @param dataSize Size of the audio data in bytes
- * @return DataHeader structure
  */
 DataHeader WavWriter::createDataHeader(uint32_t dataSize) {
     DataHeader chunck;
