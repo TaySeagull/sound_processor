@@ -9,6 +9,7 @@
 #include "filters/normalize_filter.h"
 #include "filters/lowpass_filter.h"
 
+// TODO: сделать один класс для фильтров (но не для creator'ов)
 
 namespace FilterProducers {
 

@@ -2,6 +2,8 @@
 #include "ifilter.h"
 #include "filter_descriptor.h"
 
+// TODO: изменить продюссеры
+
 /**
  * @brief Namespace containing filter producer functions
  */

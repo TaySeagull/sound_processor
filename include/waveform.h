@@ -2,6 +2,8 @@
 #include <vector>
 #include <cstdint>
 
+// TODO: скипать метаданные
+
 /**
  * @class Waveform
  * @brief A class for the wav file structure

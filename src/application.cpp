@@ -4,6 +4,9 @@
 #include "wav_reader.h"
 #include "wav_writer.h"
 
+// TODO: Конвертор для генерации help
+// TODO: генерация реестра на уровне компиляции
+
 /**
  * @brief Configures all the filters
  */

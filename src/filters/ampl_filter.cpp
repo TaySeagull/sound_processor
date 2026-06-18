@@ -1,5 +1,7 @@
 #include "filters/ampl_filter.h"
 
+// TODO: перенести логику продюссеров в сами фильтры
+
 /**
  * @brief Constructor for ampl_filter
  */

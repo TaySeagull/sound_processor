@@ -2,6 +2,8 @@
 #include <exception>
 #include "application.h"
 
+// TODO: сообщения пользователям об исполнении
+
 /**
  * @brief that's main)
  */

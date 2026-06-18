@@ -2,6 +2,8 @@
 #include <cstring>
 #include "argument_parser.h"
 
+// TODO: проверка путей через библиотеку std::filesystem
+
 /**
  * @brief Parses command line arguments
  */
@@ -76,6 +78,8 @@ ArgsParser::Result ArgsParser::parse(int argc, char* argv[]) {
 
     return Result::ok;
 }
+
+// TODO: -h --hepl
 
 /**
  * @brief Prints help

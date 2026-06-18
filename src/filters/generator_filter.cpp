@@ -1,6 +1,7 @@
 #include <cmath>
 #include "filters/generator_filter.h"
 
+// TODO: пересмотреть генератор фильтер  и абстракт фильтер 
 
 constexpr double PI = 3.14159265358979323846;
 

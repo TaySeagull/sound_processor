@@ -2,6 +2,9 @@
 #include <cstring>
 #include "wav_writer.h"
 
+// TODO: проверка на существование output файла
+// TODO: хэддеры и waveform объеденить в один класс, описывающий структуру wav (перспектива для работы с другими файлами) 
+
 /**
  * @brief Writes a Waveform object to a wav file
  */
